@@ -1,9 +1,9 @@
-package com.example.bajp1
+package com.example.bajp1.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.example.bajp1.ui.movies.SectionsPagerAdapter
+import com.example.bajp1.R
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {

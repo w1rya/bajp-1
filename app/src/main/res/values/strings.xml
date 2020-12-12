@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">BAJP 1</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="movies">Movies</string>
+    <string name="tv_series">TV Series</string>
     <string name="title">Title</string>
     <string name="year">2019</string>
-    <string name="overview">Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil. asdlaskjdlaksdjalkdjaslkdjask alskdjalskdjalkdsj</string>
+    <string name="overview">Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil.</string>
 </resources>
