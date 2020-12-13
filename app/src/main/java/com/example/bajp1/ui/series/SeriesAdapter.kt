@@ -1,5 +1,6 @@
 package com.example.bajp1.ui.series
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.bajp1.R
 import com.example.bajp1.data.MovieEntity
+import com.example.bajp1.ui.detail.DetailActivity
 import com.example.bajp1.utils.Constants
 import kotlinx.android.synthetic.main.item_movie.view.*
 
@@ -46,10 +48,13 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesViewHolder>() {
                 tv_overview.text = series.overview
                 iv_poster.load(series.imageUrl) {
                     placeholder(R.drawable.poster)
-                    transformations(RoundedCornersTransformation(Constants.cornerRadius))
+                    transformations(RoundedCornersTransformation(Constants.CORNER_RADIUS))
                 }
                 itemView.setOnClickListener {
                     Toast.makeText(itemView.context, series.title, Toast.LENGTH_SHORT).show()
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_MOVIE, series.id)
+                    itemView.context.startActivity(intent)
                 }
             }
         }
