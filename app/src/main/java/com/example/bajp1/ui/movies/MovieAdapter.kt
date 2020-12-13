@@ -47,7 +47,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                 tv_year.text = movie.year
                 tv_overview.text = movie.overview
                 iv_poster.load(movie.imageUrl) {
-                    placeholder(R.drawable.poster)
+                    placeholder(R.drawable.placeholder)
                     transformations(RoundedCornersTransformation(Constants.CORNER_RADIUS))
                 }
                 itemView.setOnClickListener {

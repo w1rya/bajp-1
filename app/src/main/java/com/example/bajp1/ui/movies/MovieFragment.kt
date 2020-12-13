@@ -29,7 +29,7 @@ class MovieFragment : Fragment() {
             val movieAdapter = MovieAdapter()
             movieAdapter.setMovies(movies)
 
-            rv_academy.apply {
+            rv_movies.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = movieAdapter
                 setHasFixedSize(true)

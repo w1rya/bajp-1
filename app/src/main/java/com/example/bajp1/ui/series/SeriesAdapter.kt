@@ -47,7 +47,7 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesViewHolder>() {
                 tv_year.text = series.year
                 tv_overview.text = series.overview
                 iv_poster.load(series.imageUrl) {
-                    placeholder(R.drawable.poster)
+                    placeholder(R.drawable.placeholder)
                     transformations(RoundedCornersTransformation(Constants.CORNER_RADIUS))
                 }
                 itemView.setOnClickListener {

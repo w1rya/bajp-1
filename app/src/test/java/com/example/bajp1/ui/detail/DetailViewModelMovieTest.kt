@@ -5,6 +5,9 @@ import org.junit.Before
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.Rule
+import org.junit.rules.ExpectedException
+import kotlin.jvm.Throws
 
 class DetailViewModelMovieTest {
 
@@ -12,6 +15,10 @@ class DetailViewModelMovieTest {
 
     private val dummyMovie = DummyData.generateMovies()[0]
     private val selectedMovie = dummyMovie.id
+    private val selectedMovieNotExist = "mv10"
+
+    @get:Rule
+    var thrown: ExpectedException = ExpectedException.none()
 
     @Before
     fun setUp() {
@@ -36,5 +43,16 @@ class DetailViewModelMovieTest {
         assertEquals(dummyMovie.duration, movieEntity.duration)
         assertEquals(dummyMovie.overview, movieEntity.overview)
         assertEquals(dummyMovie.imageUrl, movieEntity.imageUrl)
+    }
+
+    @Test
+    @Throws(UninitializedPropertyAccessException::class)
+    fun getMovieNotExist() {
+        viewModel.setSelectedItem(selectedMovieNotExist)
+        thrown.expect(UninitializedPropertyAccessException::class.java)
+        thrown.expectMessage("lateinit property movieEntity has not been initialized")
+        val movieEntity = viewModel.getMovie()
+        assertNotNull(movieEntity)
+        assertEquals(dummyMovie.id, movieEntity.id)
     }
 }

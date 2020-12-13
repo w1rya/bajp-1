@@ -15,6 +15,7 @@ class DetailActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_MOVIE = "extra_movie"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -40,6 +41,7 @@ class DetailActivity : AppCompatActivity() {
 
         tv_detail_score.text = movieEntity.score
         iv_detail_poster.load(movieEntity.imageUrl) {
+            placeholder(R.drawable.placeholder)
             transformations(RoundedCornersTransformation(CORNER_RADIUS))
         }
 

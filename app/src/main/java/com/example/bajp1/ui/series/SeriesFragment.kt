@@ -30,7 +30,7 @@ class SeriesFragment : Fragment() {
             val seriesAdapter = SeriesAdapter()
             seriesAdapter.setSeries(movies)
 
-            rv_academy.apply {
+            rv_series.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = seriesAdapter
                 setHasFixedSize(true)
